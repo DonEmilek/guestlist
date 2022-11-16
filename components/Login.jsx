@@ -33,7 +33,7 @@ function Login() {
     if (validator(name, surname)) {
       setSubmitForm(true);
       await addGuestPending(
-        process.env.USER_ID_FB, // set id acoount
+        process.env.NEXT_PUBLIC_USER_ID_FB, // set id acoount
         name,
         surname,
         active
