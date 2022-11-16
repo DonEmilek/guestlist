@@ -7,12 +7,12 @@ import "firebase/compat/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDKhuKkl6utA8R1I24PuWyugmgaf63D3As",
-  authDomain: "guestlister-949a7.firebaseapp.com",
-  projectId: "guestlister-949a7",
-  storageBucket: "guestlister-949a7.appspot.com",
-  messagingSenderId: "11306470026",
-  appId: "1:11306470026:web:0303d687b49bb758657b73",
+  apiKey: process.env.API_KEY_FB,
+  authDomain: process.env.AUTH_DOMAIN_FB,
+  projectId: process.env.PROJECT_ID_FB,
+  storageBucket: process.env.STORAGE_BUCKET_FB,
+  messagingSenderId: process.env.MESSASING_SENDER_ID_FB,
+  appId: process.env.APP_ID_FB,
 };
 
 // Initialize Firebase
