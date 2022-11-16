@@ -61,7 +61,7 @@ const acceptGuest = async (
       status: true,
     });
     await addDoc(collection(db, "guest"), {
-      userId: process.env.NEXT_PUBLIC_USER_ID_FB, //target id account
+      userId: "QecI9CjXAEO7TyzrnZm4Z1yAtdM2", //target id account
       name: fname,
       surname: lname,
       status: status,
