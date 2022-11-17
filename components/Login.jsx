@@ -55,7 +55,7 @@ function Login() {
     const docSnap = await getDoc(docRef);
     const firebasePassword = docSnap.data();
     if (password === firebasePassword.adminpass)
-      auth.signInWithPopup(provider).catch(alert);
+      auth.signInWithRedirect(provider).catch(alert);
     else {
       alert("Incorrect password");
     }
