@@ -1,13 +1,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Dashboard from "../components/Dashboard";
+import Login from "../components/Login";
 const Home: NextPage = () => {
   return (
     <div>
       <Head>
         <title>Guest Checker</title>
       </Head>
-      <Dashboard />
+      <Login />
     </div>
   );
 };

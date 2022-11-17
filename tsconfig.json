@@ -24,7 +24,7 @@
     "**/*.ts",
     "**/*.tsx",
     "components/Check.jsx"
-  ],
+, "components/Dashboard.jsx"  ],
   "exclude": [
     "node_modules"
   ]

@@ -7,6 +7,7 @@ import { auth, db, provider } from "../firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { zamieszanie, metalcave } from "../public/images/index";
 import { addGuest, addGuestPending } from "../api/addguest";
+import { useRouter } from "next/router";
 function Login() {
   const [authAdmin, setAuthAdmin] = useState(false);
   const [visibleButton, setVisibleButton] = useState(false);
@@ -17,7 +18,7 @@ function Login() {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [active, setActive] = useState(false);
-
+  const router = useRouter();
   function validator(name, surname) {
     if (name.trim().length === 0 || surname.trim().length === 0) {
       setAlertForm(true);
@@ -54,9 +55,10 @@ function Login() {
     const docRef = doc(db, "password", "KW4JtThdRRw6CvWRrq0p");
     const docSnap = await getDoc(docRef);
     const firebasePassword = docSnap.data();
-    if (password === firebasePassword.adminpass)
+    if (password === firebasePassword.adminpass) {
       auth.signInWithRedirect(provider).catch(alert);
-    else {
+      router.push("dashboard");
+    } else {
       alert("Incorrect password");
     }
   };
