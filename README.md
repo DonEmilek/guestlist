@@ -33,9 +33,9 @@ Click on right star three times to render secret login button to log into admin 
 ## Admin Page
 Admin Page ( /dashboard ) is a admin page. Here you can manage guests.
 - Buttons:
-**Add guest** -> add guest directly to *List of guests* section.
-**List of guests** -> full guests list with guests added from *Add guest* and accepted from *Lobby*.
-**Lobby** -> full registered guests list which have ```pending``` status.
+1. **Add guest** -> add guest directly to *List of guests* section.
+2. **List of guests** -> full guests list with guests added from *Add guest* and accepted from *Lobby*.
+3. **Lobby** -> full registered guests list which have ```pending``` status.
 
 ### Statuses:
 - **Active** Active guest
