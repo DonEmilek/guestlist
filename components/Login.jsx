@@ -34,7 +34,7 @@ function Login() {
     if (validator(name, surname)) {
       setSubmitForm(true);
       await addGuestPending(
-        "QecI9CjXAEO7TyzrnZm4Z1yAtdM2", // set id acoount
+        NEXT_PUBLIC_USER_ID_FB, // target id acoount
         name,
         surname,
         active
@@ -52,7 +52,7 @@ function Login() {
 
   const handleAdminPanel = async (e) => {
     e.preventDefault();
-    const docRef = doc(db, "password", "KW4JtThdRRw6CvWRrq0p");
+    const docRef = doc(db, "password", process.env.NEXT_PUBLIC_PASSWORD_DOC);
     const docSnap = await getDoc(docRef);
     const firebasePassword = docSnap.data();
     if (password === firebasePassword.adminpass) {
