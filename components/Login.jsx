@@ -5,7 +5,6 @@ import { AiFillStar } from "react-icons/ai";
 import { GiPartyPopper } from "react-icons/gi";
 import { auth, db, provider } from "../firebase";
 import { doc, getDoc } from "firebase/firestore";
-import { zamieszanie, metalcave } from "../public/images/index";
 import { addGuest, addGuestPending } from "../api/addguest";
 import { useRouter } from "next/router";
 function Login() {
@@ -57,7 +56,9 @@ function Login() {
     const firebasePassword = docSnap.data();
     if (password === firebasePassword.adminpass) {
       auth.signInWithRedirect(provider).catch(alert);
-      router.push("dashboard");
+      setTimeout(function () {
+        router.push("dashboard");
+      }, 2000);
     } else {
       alert("Incorrect password");
     }
@@ -74,27 +75,11 @@ function Login() {
       </Head>
       <div className="flex justify-around items-center pt-12">
         <AiFillStar size={30} color={"white"} />
-        <Image
-          className="rounded-xl"
-          src={zamieszanie}
-          alt=""
-          width={80}
-          height={80}
-        />
         <AiFillStar size={30} color={"white"} />
-        <Image
-          className="rounded-xl"
-          src={metalcave}
-          alt=""
-          width={80}
-          height={80}
-        />
         <AiFillStar size={30} color={"white"} onClick={handleVisible} />
       </div>
-      <p className="text-3xl text-amber-300 text-center pt-12">18.11</p>
-      <p className="text-xl text-center text-amber-300 pt-12">
-        Birthday party and TUNE - death is nothing more than leaving the party{" "}
-      </p>
+      <p className="text-3xl text-amber-300 text-center pt-12">20.20</p>
+      <p className="text-xl text-center text-amber-300 pt-12">TOP EVENT </p>
 
       {/* Register form */}
       <div className="flex items-center justify-center text-xl text-center font-thin text-amber-300 pt-20">
